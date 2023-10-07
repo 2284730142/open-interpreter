@@ -630,7 +630,8 @@ class Interpreter:
                 # The user set the api_base. litellm needs this to be "custom/{model}"
                 response = litellm.completion(
                   api_base=self.api_base,
-                  model = "custom/" + self.model,
+                  # model = "custom/" + self.model,
+                  model = self.model,
                   messages=messages,
                   functions=[function_schema],
                   stream=True,
